@@ -112,9 +112,13 @@ module Crypt::SodiumScrypt {
         my $memlimit = $sensitive ?? MEMLIMIT_SENSITIVE !! MEMLIMIT_INTERACTIVE;
         my $password-length = $password.encode.bytes;
         my $hashed        = CArray[uint8].allocate(SCRYPT_STRBYTES);
-        crypto_pwhash_scryptsalsa208sha256_str($hashed, $password, $password-length, $opslimit, $memlimit);
+
+        if crypto_pwhash_scryptsalsa208sha256_str($hashed, $password, $password-length, $opslimit, $memlimit) {
+            die 'out of memory in scrypt-hash';
+        }
+
         my $buf = copy-carray-to-buf($hashed, SCRYPT_STRBYTES);
-        $buf.decode;
+        $buf.decode.subst(/\0+$/,'');
     }
 
     sub crypto_pwhash_scryptsalsa208sha256_str_verify(Str $str, Str $passwd, ulonglong $passwdlen --> int32) is native(LIB) { * }

@@ -27,7 +27,7 @@
   "provides": {
       "Crypt::SodiumScrypt": "lib/Crypt/SodiumScrypt.pm"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "meta-version": "1",
   "authors": [
       "Jonathan Stpwe <jns+gh@gellyfish.co.uk"
