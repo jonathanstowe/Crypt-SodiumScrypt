@@ -38,7 +38,7 @@ provided by L<libsodium|https://libsodium.gitbook.io/doc/>.
 
 The Scrypt algorithm is designed to be prohibitively expensive in terms
 of time and memory for a brute force attack, so is considered relatively
-secure. However this means that it might not be suitable for use on 
+secure. However this means that it might not be suitable for use on
 resource constrained systems.
 
 The hash returned by C<scrypt-hash> is in the format used in
@@ -77,7 +77,12 @@ module Crypt::SodiumScrypt {
                     last;
                 }
             }
-            $lib;
+            if $lib {
+                $lib;
+            }
+            else {
+                die "unable to find libsodium between versions $lower to $upper";
+            }
         }
     }
 
@@ -130,4 +135,4 @@ module Crypt::SodiumScrypt {
 
 }
 
-# vim: ft=perl6
+# vim: ft=raku

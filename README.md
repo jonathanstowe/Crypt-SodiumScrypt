@@ -2,6 +2,8 @@
 
 Scrypt password hashing using libsodium
 
+![Build Status](https://github.com/jonathanstowe/Crypt-SodiumScrypt/workflows/CI/badge.svg)
+
 ## Synopsis
 
 
@@ -54,5 +56,4 @@ I've tested this with libsodium versions from 13 to 23, but if you find it doesn
 This is free software please see the [LICENCE](LICENCE) file in the distribution
 for details.
 
-© Jonathan Stowe 2019
-
+© Jonathan Stowe 2019 - 2021

@@ -1,5 +1,8 @@
 {
   "name": "Crypt::SodiumScrypt",
+  "version": "0.0.3",
+  "api": "1.0",
+  "auth": "github:jonathanstowe",
   "source-url": "https://github.com/jonathanstowe/Crypt-SodiumScrypt.git",
   "support": {
     "source": "https://github.com/jonathanstowe/Crypt-SodiumScrypt.git",
@@ -12,7 +15,6 @@
   ],
   "build-depends": [
   ],
-  "auth": "github:jonathanstowe",
   "depends": [
 	  "LibraryCheck",
       "NativeHelpers::Array"
@@ -27,7 +29,6 @@
   "provides": {
       "Crypt::SodiumScrypt": "lib/Crypt/SodiumScrypt.pm"
   },
-  "version": "0.0.2",
   "meta-version": "1",
   "authors": [
       "Jonathan Stpwe <jns+gh@gellyfish.co.uk"

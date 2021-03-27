@@ -1,3 +1,7 @@
+v0.0.3		Sat 27 Mar 18:36:42 GMT 2021
+    * Meaningful error message if libsodium not found
+    * Skip rather than fail tests if no libsodium
+    * Make a GH action for CI tests
 v0.0.2		Fri 20 Dec 12:33:35 GMT 2019
 	* Remove trailling nulls from hash
 	* catch failure of hash function

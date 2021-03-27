@@ -1,10 +1,9 @@
-#!/usr/bin/env perl6
+#!/usr/bin/env raku
 
 use v6;
 
 use Test;
 use LibraryCheck;
-use Crypt::SodiumScrypt;
 
 sub check-lib-version() {
     my Str $name = 'sodium';
@@ -26,6 +25,8 @@ sub check-lib-version() {
 }
 
 if check-lib-version() {
+    require Crypt::SodiumScrypt <&scrypt-hash &scrypt-verify>;
+
     my @chars = (|("a" .. "z"), |("A" .. "Z"), |(0 .. 9));
 
     subtest  {
@@ -46,10 +47,11 @@ if check-lib-version() {
     }, 'with sensitive profile';
 }
 else {
+    diag "libsodium is not installed, skipping tests";
     skip "No libsodium, skipping tests";
 }
 
 
 
 done-testing;
-# vim: expandtab shiftwidth=4 ft=perl6
+# vim: expandtab shiftwidth=4 ft=raku
