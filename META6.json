@@ -1,6 +1,6 @@
 {
   "name": "Crypt::SodiumScrypt",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "api": "1.0",
   "auth": "github:jonathanstowe",
   "source-url": "https://github.com/jonathanstowe/Crypt-SodiumScrypt.git",
@@ -16,7 +16,7 @@
   "build-depends": [
   ],
   "depends": [
-	  "LibraryCheck",
+      "NativeLibs:ver<0.0.5+>",
       "NativeHelpers::Array"
   ],
   "tags": [ 
@@ -27,7 +27,7 @@
 	  "LibraryCheck"
   ],
   "provides": {
-      "Crypt::SodiumScrypt": "lib/Crypt/SodiumScrypt.pm"
+      "Crypt::SodiumScrypt": "lib/Crypt/SodiumScrypt.rakumod"
   },
   "meta-version": "1",
   "authors": [

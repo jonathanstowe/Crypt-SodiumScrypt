@@ -1,9 +1,9 @@
 use v6;
 
 use NativeCall :TEST,:DEFAULT;
+use NativeLibs:ver<0.0.5+>;
 
 use NativeHelpers::Array;
-use LibraryCheck;
 
 =begin pod
 
@@ -60,33 +60,13 @@ than is desirable.
 
 module Crypt::SodiumScrypt {
 
-    my Str $lib;
-    sub find-lib-version() {
-        $lib //= do {
-            my Str $name = 'sodium';
-            my Int $lower = 13;
-            my Int $upper = 23;
 
-            my $lib;
+    constant LIB = NativeLibs::Searcher.at-runtime(
+        'sodium',
+        'crypto_pwhash_strbytes',
+        15..23
+    );
 
-            for $lower .. $upper -> $version-number {
-                my $version = Version.new($version-number);
-
-                if library-exists($name, $version) {
-                    $lib =  guess_library_name($name, $version) ;
-                    last;
-                }
-            }
-            if $lib {
-                $lib;
-            }
-            else {
-                die "unable to find libsodium between versions $lower to $upper";
-            }
-        }
-    }
-
-    constant LIB =  &find-lib-version;
 
     sub crypto_pwhash_scryptsalsa208sha256_strbytes( --> size_t ) is native(LIB) { * }
 
