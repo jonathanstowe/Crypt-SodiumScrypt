@@ -1,3 +1,5 @@
+v0.0.5	Sun  7 Aug 09:43:26 BST 2022
+	* Upload to zef repository
 v0.0.4		Wed 17 Nov 15:55:49 GMT 2021
 	* Switch to use NativeLibs for library detection
 v0.0.3		Sat 27 Mar 18:36:42 GMT 2021
@@ -9,3 +11,4 @@ v0.0.2		Fri 20 Dec 12:33:35 GMT 2019
 	* catch failure of hash function
 v0.0.1		Thu 19 Dec 13:17:49 GMT 2019
 	* Initial release
+
